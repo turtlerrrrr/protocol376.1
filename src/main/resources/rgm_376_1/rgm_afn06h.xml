@@ -1,0 +1,169 @@
+<datas path="afn06h">
+    <data name="getSecurityInfo" path="f1">
+        <remark>获取终端安全信息</remark>
+        <field name="keyVersion">
+            <remark>密钥版本</remark>
+            <decode/>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="serial">
+            <remark>芯片序列号</remark>
+            <decode/>
+            <fieldType name="hexString">
+                <length>8</length>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="sysAuthority" path="f2">
+        <remark>系统身份认证</remark>
+        <field name="random">
+            <remark>随机数R1</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>8</length>
+            </fieldType>
+        </field>
+        <field name="encryptRandom">
+            <remark>加密的随机数R1</remark>
+            <decode/>
+            <fieldType name="hexString">
+                <length>16</length>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="pubKeyVerify" path="f3">
+        <remark>公钥验证</remark>
+        <field name="random">
+            <remark>公钥验证随机数</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>8</length>
+            </fieldType>
+        </field>
+        <field name="msIndex">
+            <remark>主站公钥索引</remark>
+            <encode/>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="verify">
+            <remark>验证数据</remark>
+            <decode/>
+            <fieldType name="hexString">
+                <length>16</length>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="pubKeyUpdate" path="f4">
+        <remark>更新公钥</remark>
+        <field name="indexSigned">
+            <remark>签名公钥索引</remark>
+            <encode/>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="msIndex">
+            <remark>更新主站公钥索引</remark>
+            <encode/>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="msKey">
+            <remark>新主站公钥</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>64</length>
+            </fieldType>
+        </field>
+        <field name="msKeySigned">
+            <remark>新公钥签名数据</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>64</length>
+            </fieldType>
+        </field>
+        <field name="random">
+            <remark>公钥验证随机数</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>8</length>
+            </fieldType>
+        </field>
+        <field name="encryptRandom">
+            <remark>随机数密文</remark>
+            <decode/>
+            <fieldType name="hexString">
+                <length>68</length>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="syKeyUpdate" path="f5">
+        <remark>更新对称密钥</remark>
+        <field name="msIndex">
+            <remark>主站公钥索引</remark>
+            <encode/>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="key">
+            <remark>密钥数据</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>132</length>
+            </fieldType>
+        </field>
+        <field name="signed">
+            <remark>签名</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>64</length>
+            </fieldType>
+        </field>
+        <field name="result">
+            <remark>执行结果</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+        </field>
+    </data>
+
+    <data name="keyNegotiation" path="f6">
+        <remark>密钥协商</remark>
+        <field name="msIndex">
+            <remark>主站公钥索引</remark>
+            <encode/>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="random">
+            <remark>公钥验证随机数</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>8</length>
+            </fieldType>
+        </field>
+        <field name="signed">
+            <remark>签名</remark>
+            <encode/>
+            <fieldType name="hexString">
+                <length>64</length>
+            </fieldType>
+        </field>
+        <field name="verify">
+            <remark>密钥协商终端密文数据</remark>
+            <decode/>
+            <fieldType name="hexString">
+                <length>16</length>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="getTermRandom" path="f7">
+        <remark>获取终端随机数</remark>
+        <field name="random">
+            <remark>随机数</remark>
+            <decode/>
+            <fieldType name="hexString">
+                <length>8</length>
+            </fieldType>
+        </field>
+    </data>
+</datas>

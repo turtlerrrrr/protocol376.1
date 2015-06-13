@@ -1,0 +1,29 @@
+<protocals>
+    <protocal name="rgm_376_1">
+        <files>
+            <file>rgm_afn00h.xml</file>
+            <file>rgm_afn01h.xml</file>
+            <file>rgm_afn02h.xml</file>
+            <file>rgm_afn04h.xml</file>
+            <file>rgm_afn05h.xml</file>
+            <file>rgm_afn06h.xml</file>
+            <file>rgm_afn0ah.xml</file>
+            <file>rgm_afn0ch.xml</file>
+            <file>rgm_afn0dh.xml</file>
+            <file>rgm_afn0eh.xml</file>
+            <file>rgm_fieldGroup.xml</file>
+            <file>rgm_event.xml</file>
+        </files>
+        <params>
+            <entry key="msa"  value="22"></entry>
+            <entry key="terminalAddress"  value="FFFFFFFF"></entry>
+            <entry key="password"  value="00000000000000000000000000000000"></entry>
+            <entry key="haveTp"  value="true"></entry>
+            <entry key="timeout"  value="5"></entry>
+            <entry key="processControl"  value="true"></entry>
+            <entry key="protocalVersion"  value="3"></entry>
+            <entry key="distinctLength"  value="2"></entry>
+            <entry key="terminalAddressLength"  value="2"></entry>
+        </params>
+    </protocal>
+</protocals>

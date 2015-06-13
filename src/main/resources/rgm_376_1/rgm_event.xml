@@ -1,0 +1,405 @@
+<events>
+    <event name="paramChange" eventId="3">
+        <remark>参数变化</remark>
+        <refFieldGroup name="logTime">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="address">
+            <remark>启动站地址</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="pnfn">
+            <remark>pnfns</remark>
+            <refNum>(#data['length']-6)/4</refNum>
+            <field name="pn">
+                <remark>pn</remark>
+                <fieldType name="da"/>
+            </field>
+            <field name="fn">
+                <remark>fn</remark>
+                <fieldType name="dt"/>
+            </field>
+        </list>
+
+    </event>
+
+    <event name="statusChange" eventId="4">
+        <remark>状态量变位记录</remark>
+        <refFieldGroup name="changeTime">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="changeBefore">
+            <remark>变化前</remark>
+            <fieldType name="unsigned8">
+            </fieldType>
+        </field>
+        <field name="changeAfter">
+            <remark>变化后</remark>
+            <fieldType name="unsigned8">
+            </fieldType>
+        </field>
+    </event>
+
+
+    <event name="stoppingPowerEvent" eventId="14">
+        <remark>终端停/上电事件</remark>
+        <refFieldGroup name="offTime">
+            <remark>停电时间</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <refFieldGroup name="onTime">
+            <remark>上电时间</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="maxCurrentA">
+            <remark>停电前1分钟内最大A相电流值</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.001</degree>
+            </fieldType>
+        </field>
+        <field name="maxCurrentB">
+            <remark>停电前1分钟内最大B相电流值</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.001</degree>
+            </fieldType>
+        </field>
+        <field name="maxCurrentC">
+            <remark>停电前1分钟内最大C相电流值</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.001</degree>
+            </fieldType>
+        </field>
+    </event>
+
+    <event name="overBalanceLimit" eventId="17">
+        <remark>overBalanceLimit</remark>
+        <refFieldGroup name="logTime">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="pn">
+            <remark>测量点号</remark>
+            <fieldType name="unsigned16">
+                <length>12</length>
+            </fieldType>
+        </field>
+        <field name="dummy1">
+            <remark>备用</remark>
+            <hidden/>
+            <fieldType name="unsigned16">
+                <length>3</length>
+            </fieldType>
+        </field>
+        <field name="flag">
+            <remark>起/止标志</remark>
+            <fieldType name="unsigned16">
+                <length>1</length>
+            </fieldType>
+        </field>
+        <field name="voltageFlag">
+            <remark>电压不平衡度越限标志</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+        </field>
+        <field name="currentFlag">
+            <remark>电流不平衡度越限标志</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+        </field>
+        <field name="howSerious">
+            <remark>严重程度</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+        </field>
+        <field name="dummy2">
+            <remark>备用</remark>
+            <fieldType name="unsigned8">
+                <length>5</length>
+            </fieldType>
+        </field>
+        <field name="voltageUnbalanceDegree">
+            <remark>发生时的电压不平衡度（％）</remark>
+            <fieldType name="bcdSigned">
+                <length>2</length>
+            </fieldType>
+        </field>
+        <field name="currentUnbalanceDegree">
+            <remark>发生时的电流不平衡度（％）</remark>
+            <fieldType name="bcdSigned">
+                <length>2</length>
+            </fieldType>
+        </field>
+        <field name="Ua_Uab">
+            <remark>发生时的Ua/Uab</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+        </field>
+        <field name="Ub">
+            <remark>发生时的Ub</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+        </field>
+        <field name="Uc_Ucb">
+            <remark>发生时的Uc_Ucb</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+        </field>
+        <field name="Ia">
+            <remark>发生时的Ia</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.001</degree>
+            </fieldType>
+        </field>
+        <field name="Ib">
+            <remark>发生时的Ib</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.001</degree>
+            </fieldType>
+        </field>
+        <field name="Ic">
+            <remark>发生时的Ic</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.001</degree>
+            </fieldType>
+        </field>
+    </event>
+
+    <event name="trafficOverFlow" eventId="32">
+        <remark>trafficOverFlow</remark>
+        <refFieldGroup name="logTime">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="traffic">
+            <remark>当月已发生的通信流量</remark>
+            <fieldType name="unsigned32"/>
+        </field>
+        <field name="trafficLimit">
+            <remark>月通信流量门限</remark>
+            <fieldType name="unsigned32"/>
+        </field>
+    </event>
+
+    <event name="svcControlRecord" eventId="50">
+        <remark>svcControlRecord</remark>
+        <refFieldGroup name="logTime">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <refFieldGroup name="happenTime">
+            <remark>发生时间</remark>
+            <refType>a1</refType>
+        </refFieldGroup>
+        <field name="status">
+            <remark>状态(0-切除、 1-投入、 2-失灵)</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="load">
+            <remark>投切时负载(总有功功率)</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.0001</degree>
+            </fieldType>
+        </field>
+        <refFieldGroup name="onTime">
+            <remark>投入时间</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+    </event>
+
+    <event name="loadShedding" eventId="51">
+        <remark>loadShedding</remark>
+        <refFieldGroup name="logTime">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <refFieldGroup name="happenTime">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a1</refType>
+        </refFieldGroup>
+        <field name="one_line">
+            <remark>1路</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+        </field>
+        <field name="two_line">
+            <remark>2路</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+        </field>
+        <field name="three_line">
+            <remark>3路</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+        </field>
+        <field name="dummy1">
+            <remark>备用</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+        </field>
+        <field name="Ia">
+            <remark>发生时A相电流</remark>
+            <fieldType name="bcdSigned">
+                <length>2</length>
+                <degree>0.001</degree>
+            </fieldType>
+        </field>
+        <field name="Ib">
+            <remark>发生时B相电流</remark>
+            <fieldType name="bcdSigned">
+                <length>2</length>
+                <degree>0.001</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+        <field name="Ic">
+            <remark>发生时C相电流</remark>
+            <fieldType name="bcdSigned">
+                <length>2</length>
+                <degree>0.001</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+        <field name="I0">
+            <remark>发生时零序电流</remark>
+            <fieldType name="bcdSigned">
+                <length>2</length>
+                <degree>0.001</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+        <field name="Ua">
+            <remark>发生时A相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+        <field name="Ub">
+            <remark>发生时B相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+        <field name="Uc">
+            <remark>发生时C相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+    </event>
+
+    <event name="protectorSwitchOff" eventId="52">
+        <remark>剩余电流动作保护器跳闸记录</remark>
+        <refFieldGroup name="logTime">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="line">
+            <remark>漏保所属路数</remark>
+            <fieldType name="unsigned16">
+                <length>12</length>
+            </fieldType>
+        </field>
+        <field name="dummy1">
+            <remark>保留</remark>
+            <fieldType name="unsigned16">
+                <length>4</length>
+            </fieldType>
+        </field>
+        <field name="cause">
+            <remark>跳闸原因</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="phase">
+            <remark>相</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <refFieldGroup name="happenTime">
+            <remark>发生时间</remark>
+            <refType>a1</refType>
+        </refFieldGroup>
+        <field name="residualCurrent">
+            <remark>发生时剩余电流（单位 毫安）</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="Ua">
+            <remark>发生时A相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+        <field name="Ub">
+            <remark>发生时B相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+        <field name="Uc">
+            <remark>发生时C相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+        <field name="Ia">
+            <remark>发生时A相电流</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.1</degree>
+            </fieldType>
+        </field>
+        <field name="Ib">
+            <remark>发生时B相电流</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+        <field name="Ic">
+            <remark>发生时C相电流</remark>
+            <fieldType name="bcdSigned">
+                <length>3</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+    </event>
+
+
+</events>

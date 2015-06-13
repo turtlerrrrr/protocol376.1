@@ -1,0 +1,402 @@
+<datas path="afn04h">
+    <data name="setMsIp" path="f3">
+        <remark>设置主站IP地址和端口</remark>
+        <fieldGroup name="mainIp">
+            <format>${ip1Seg1}.${ip1Seg2}.${ip1Seg3}.${ip1Seg4}:${ip1port}</format>
+            <field name="ip1Seg1">
+                <remark>主ip段1</remark>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="ip1Seg2">
+                <remark>主ip段2</remark>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="ip1Seg3">
+                <remark>主ip段3</remark>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="ip1Seg4">
+                <remark>主ip段4</remark>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="ip1port">
+                <remark>ip1端口</remark>
+                <fieldType name="unsigned16"/>
+            </field>
+        </fieldGroup>
+        <fieldGroup name="subIp">
+            <format>${ip2Seg1}.${ip2Seg2}.${ip2Seg3}.${ip2Seg4}:${ip2port}</format>
+            <field name="ip2Seg1">
+                <remark>主ip段1</remark>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="ip2Seg2">
+                <remark>主ip段2</remark>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="ip2Seg3">
+                <remark>主ip段3</remark>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="ip2Seg4">
+                <remark>主ip段4</remark>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="ip2port">
+                <remark>ip1端口</remark>
+                <fieldType name="unsigned16"/>
+            </field>
+        </fieldGroup>
+        <field name="APN">
+            <remark>apn</remark>
+            <fieldType name="ascii">
+                <length>16</length>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="setResidualCurrentProtectorConfig" path="f10">
+        <remark>设置漏保装置配置参数</remark>
+        <field name="configNum">
+            <remark>本次漏保配置数量n</remark>
+            <fieldType name="unsigned16"/>
+            <validator name="range">0,2040</validator>
+        </field>
+        <list name="protectors">
+            <refNum>#data['configNum']</refNum>
+            <field name="protectorIndex">
+                <remark>漏保序号</remark>
+                <fieldType name="unsigned16"/>
+                <validator name="range">1,2040</validator>
+            </field>
+            <field name="measuringPoint">
+                <remark>所属测量点号</remark>
+                <fieldType name="unsigned16"/>
+                <validator name="exclude">1</validator>
+                <validator name="range">0,2040</validator>
+            </field>
+            <field name="port">
+                <remark>通信端口</remark>
+                <fieldType name="unsigned8">
+                    <length>4</length>
+                </fieldType>
+                <validator name="range">1,31</validator>
+            </field>
+            <field name="speed">
+                <remark>通信速率</remark>
+                <fieldType name="unsigned8">
+                    <length>4</length>
+                </fieldType>
+                <validator name="range">1,7</validator>
+                <description>
+                    <entry key="1" value="600"></entry>
+                    <entry key="2" value="1200"></entry>
+                    <entry key="3" value="2400"></entry>
+                    <entry key="4" value="4800"></entry>
+                    <entry key="5" value="7200"></entry>
+                    <entry key="6" value="9600"></entry>
+                    <entry key="7" value="19200"></entry>
+                </description>
+            </field>
+            <field name="protocalType">
+                <remark>通信协议类型</remark>
+                <fieldType name="unsigned8"/>
+                <validator name="include">0,1,2,30,31,40,41,42,43</validator>
+                <description>
+                    <entry key="0"  value="无需抄表"></entry>
+                    <entry key="1"  value="DL/T 645-1997"></entry>
+                    <entry key="2"  value="交流采样装置通信协议"></entry>
+                    <entry key="30" value="DL/T 645-2007"></entry>
+                    <entry key="31" value="串行接口连接窄带低压载波通信模块"></entry>
+                    <entry key="40" value="传统漏保"></entry>
+                    <entry key="41" value="标准漏保规约(07版)"></entry>
+                    <entry key="42" value="乾龙漏保规约"></entry>
+                    <entry key="43" value="安徽明坤漏保规约"></entry>
+                </description>
+            </field>
+            <field name="address">
+                <remark>通信地址</remark>
+                <fieldType name="bcdUnsigned">
+                    <length>6</length>
+                    <degree>1</degree>
+                </fieldType>
+            </field>
+            <field name="password">
+                <remark>通信密码</remark>
+                <fieldType name="hexString">
+                    <length>6</length>
+                </fieldType>
+            </field>
+            <field name="dummy1">
+                <remark>保留</remark>
+                <defaultValue>0</defaultValue>
+                <hidden/>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="protectorProperty">
+                <remark>漏保属性</remark>
+                <defaultValue>0</defaultValue>
+                <hidden/>
+                <fieldType name="unsigned8"/>
+            </field>
+            <field name="protectorAsset">
+                <remark>漏保资产号</remark>
+                <fieldType name="bcdUnsigned">
+                    <length>6</length>
+                    <degree>1</degree>
+                </fieldType>
+            </field>
+            <field name="dummy2">
+                <remark>保留</remark>
+                <defaultValue>0</defaultValue>
+                <hidden/>
+                <fieldType name="unsigned8"/>
+            </field>
+        </list>
+    </data>
+
+    <data name="setResidualCurrentThreshold" path="f39">
+        <remark>设置剩余电流统计阀值</remark>
+        <field name="residualCurrentThreshold1">
+            <remark>剩余电流统计阀值1</remark>
+            <!--<defaultValue>10</defaultValue>-->
+            <fieldType name="unsigned8"/>
+            <unit>%</unit>
+        </field>
+        <field name="residualCurrentThreshold2">
+            <remark>剩余电流统计阀值2</remark>
+            <!--<defaultValue>10</defaultValue>-->
+            <fieldType name="unsigned8"/>
+            <unit>%</unit>
+        </field>
+        <field name="residualCurrentThreshold3">
+            <remark>剩余电流统计阀值3</remark>
+            <!--<defaultValue>10</defaultValue>-->
+            <fieldType name="unsigned8"/>
+            <unit>%</unit>
+        </field>
+    </data>
+
+    <data name="setCurrentUnbalanceStatistics" path="f41">
+        <remark>设置电流不平衡统计参数</remark>
+        <field name="currentUnbalanceLimit1">
+            <remark>三相电流不平衡限值1（不平衡）</remark>
+            <defaultValue>20</defaultValue>
+            <fieldType name="bcdSigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+        </field>
+        <field name="currentUnbalanceLimit2">
+            <remark>三相电流不平衡限值2（严重不平衡）</remark>
+            <defaultValue>50</defaultValue>
+            <fieldType name="bcdSigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="setControlParam1" path="f42">
+        <remark>设置漏保整定参数之设备控制字1</remark>
+        <refFieldGroup name="controlParam1">
+            <remark>漏保整定参数之设备控制字1</remark>
+            <refType>controlParam1</refType>
+        </refFieldGroup>
+    </data>
+
+    <data name="setControlParam2" path="f43">
+        <remark>设置漏保整定参数之设备控制字2</remark>
+        <refFieldGroup name="controlParam2">
+            <remark>漏保整定参数之设备控制字2</remark>
+            <refType>controlParam2</refType>
+        </refFieldGroup>
+    </data>
+
+    <data name="setControlParam3" path="f44">
+        <remark>设置漏保整定参数之设备控制字3</remark>
+        <refFieldGroup name="controlParam3">
+            <remark>漏保整定参数之设备控制字3</remark>
+            <refType>controlParam3</refType>
+        </refFieldGroup>
+    </data>
+
+    <data name="setControlParam4" path="f45">
+        <remark>设置漏保整定参数之设备控制字4</remark>
+        <refFieldGroup name="controlParam4">
+            <remark>漏保整定参数之设备控制字4</remark>
+            <refType>controlParam4</refType>
+        </refFieldGroup>
+    </data>
+
+    <data name="setControlParam5" path="f46">
+        <remark>设置漏保整定参数之设备控制字5</remark>
+        <refFieldGroup name="controlParam5">
+            <remark>漏保整定参数之设备控制字5</remark>
+            <refType>controlParam5</refType>
+        </refFieldGroup>
+    </data>
+
+    <data name="setResidualCurrentThresholdAlert" path="f47">
+        <remark>设置漏保整定参数之剩余电流超限报警整定值</remark>
+        <field name="residualCurrentThresholdAlert">
+            <remark>剩余电流超限报警整定值</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+            <unit>mA</unit>
+        </field>
+    </data>
+
+    <data name="setResidualCurrentDifference" path="f48">
+        <remark>设置漏保整定参数之线路剩余电流记录变化差值整定值(10-99)</remark>
+        <field name="residualCurrentDifference">
+            <remark>线路剩余电流记录变化差值整定值(10-99)</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+            <unit>mA</unit>
+        </field>
+    </data>
+
+    <data name="setResidualCurrentRecordInterval" path="f49">
+        <remark>设置漏保整定参数之线路剩余电流记录间隔时间整定值(01-99)</remark>
+        <field name="residualCurrentRecordInterval">
+            <remark>线路剩余电流记录间隔时间整定值(01-99)</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+            <unit>Min</unit>
+        </field>
+    </data>
+
+    <data name="setOverVoltageConfig" path="f50">
+        <remark>设置漏保整定参数之过电压整定值</remark>
+        <field name="overVoltageConfig">
+            <remark>过电压整定值</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+    </data>
+
+    <data name="setUnderVoltageConfig" path="f51">
+        <remark>设置漏保整定参数之欠电压整定值</remark>
+        <field name="underVoltageConfig" remark="欠电压整定值">
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+    </data>
+
+    <data name="setLossPhaseVoltageConfig" path="f52">
+        <remark>设置漏保整定参数之断相电压整定值</remark>
+        <field name="lossPhaseVoltageConfig">
+            <remark>断相电压整定值</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+    </data>
+
+    <data name="setRatedCurrentConfig" path="f53">
+        <remark>设置漏保整定参数之额定电流整定值</remark>
+        <field name="ratedCurrentConfig">
+            <remark>额定电流整定值</remark>
+            <fieldType name="bcdUnsigned">
+                <length>3</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+    </data>
+
+    <data name="setOverCurrentConfig" path="f54">
+        <remark>设置漏保整定参数之电流超限报警整定值</remark>
+        <field name="overCurrentConfig">
+            <remark>电流超限报警整定值(x0.1In)</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="setDetectCheckTimeGroup" path="f56">
+        <remark>设置检测判断时间组参数（扩展）</remark>
+        <refFieldGroup name="timing">
+            <remark>对漏保广播校时定时时间</remark>
+            <refType>a18</refType>
+        </refFieldGroup>
+    </data>
+
+    <data name="setAutoHistoryDataItems" path="f66">
+        <remark>定时上报2类数据项定义</remark>
+        <field name="cycle">
+            <remark>定时上报周期</remark>
+            <fieldType name="unsigned8">
+                <length>6</length>
+            </fieldType>
+        </field>
+        <field name="unit">
+            <remark>定时上报周期单位</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+            <description>
+                <entry key="0" value="minute"></entry>
+                <entry key="1" value="hour"></entry>
+                <entry key="2" value="day"></entry>
+                <entry key="3" value="month"></entry>
+            </description>
+        </field>
+        <refFieldGroup name="time">
+            <remark>上报基准时间：秒分时日月年</remark>
+            <refType>a1</refType>
+        </refFieldGroup>
+        <field name="rate">
+            <remark>曲线数据抽取倍率R</remark>
+            <fieldType name="unsigned8"/>
+            <validator name="range">1,96</validator>
+        </field>
+        <field name="count">
+            <remark>数据单元标识个数n</remark>
+            <fieldType name="unsigned8"/>
+            <validator name="max">64</validator>
+        </field>
+        <list name="fnpns">
+            <refNum>#data['count']</refNum>
+            <field name="pn">
+                <remark>pn</remark>
+                <fieldType name="da"/>
+            </field>
+            <field name="fn">
+                <remark>fn</remark>
+                <fieldType name="dt"/>
+            </field>
+        </list>
+    </data>
+
+    <data name="setAutoSubmitHistory" path="f68">
+        <remark>定时上报2类数据任务启动/停止设置</remark>
+        <field name="switch">
+            <remark>开关</remark>
+            <validator name="include">85,170</validator>
+            <fieldType name="unsigned8"/>
+            <description>
+                <entry key="85" value="启动"></entry>
+                <entry key="170" value="停止"></entry>
+            </description>
+        </field>
+    </data>
+
+</datas>

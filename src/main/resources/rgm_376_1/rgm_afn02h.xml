@@ -1,0 +1,15 @@
+<datas path="afn02h">
+    <data name="login" path="f1">
+        <remark>终端登录</remark>
+    </data>
+    <data name="logout" path="f2">
+        <remark>终端退出</remark>
+    </data>
+    <data name="heartbeat" path="f3">
+        <remark>终端登录</remark>
+        <refFieldGroup name="terminalTime">
+            <remark>秒、分、时、日、星期-月、年</remark>
+            <refType>a1</refType>
+        </refFieldGroup>
+    </data>
+</datas>

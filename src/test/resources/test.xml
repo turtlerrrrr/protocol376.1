@@ -1,0 +1,81 @@
+<datas path="afn04h">
+    <data name="residualCurrentProtectorConfig">
+        <path>p0f10</path>
+        <remark>漏保装置配置参数</remark>
+        <body>
+            <fields>
+                <field name="configNum" remark="本次漏保配置数量n">
+                    <fieldType name="unsigned16"/>
+                </field>
+            </fields>
+            <many numRef="configNum">
+                <field name="protectorIndex" remark="漏保序号">
+                    <fieldType name="unsigned16"/>
+                </field>
+                <field name="measuringPoint" remark="所属测量点号">
+                    <fieldType name="unsigned16"/>
+                </field>
+                <field name="port" remark="通信端口">
+                    <fieldType name="unsigned8">
+                        <length>4</length>
+                    </fieldType>
+                </field>
+                <field name="speed" remark="通信速率">
+                    <fieldType name="unsigned8">
+                        <length>4</length>
+                    </fieldType>
+                    <description>
+                        <entry key="1" value="600"></entry>
+                        <entry key="2" value="1200"></entry>
+                        <entry key="3" value="2400"></entry>
+                        <entry key="4" value="4800"></entry>
+                        <entry key="5" value="7200"></entry>
+                        <entry key="6" value="9600"></entry>
+                        <entry key="7" value="19200"></entry>
+                    </description>
+                </field>
+                <field name="protocalType" remark="通信协议类型">
+                    <fieldType name="unsigned8"/>
+                    <description>
+                        <entry key="0"  value="无需抄表"></entry>
+                        <entry key="1"  value="DL/T 645-1997"></entry>
+                        <entry key="2"  value="交流采样装置通信协议"></entry>
+                        <entry key="30" value="DL/T 645-2007"></entry>
+                        <entry key="31" value="串行接口连接窄带低压载波通信模块"></entry>
+                        <entry key="40" value="传统漏保"></entry>
+                        <entry key="41" value="标准漏保规约(07版)"></entry>
+                        <entry key="42" value="乾龙漏保规约"></entry>
+                        <entry key="43" value="安徽明坤漏保规约"></entry>
+                    </description>
+                </field>
+                <field name="address" remark="通信地址">
+                    <fieldType name="bcdUnsigned">
+                        <length>6</length>
+                        <low>1</low>
+                    </fieldType>
+                </field>
+                <field name="password" remark="通信密码">
+                    <fieldType name="hexString">
+                        <length>6</length>
+                    </fieldType>
+                </field>
+                <field name="dummy1" remark="保留">
+                    <fieldType name="unsigned8"/>
+                </field>
+                <field name="protectorProperty" remark="漏保属性">
+                    <fieldType name="unsigned8"/>
+                </field>
+                <field name="protectorAsset" remark="漏保资产号">
+                    <fieldType name="bcdUnsigned">
+                        <length>6</length>
+                        <low>1</low>
+                    </fieldType>
+                </field>
+                <field name="dummy2" remark="保留">
+                    <fieldType name="unsigned8"/>
+                </field>
+            </many>
+        </body>
+
+    </data>
+</datas>

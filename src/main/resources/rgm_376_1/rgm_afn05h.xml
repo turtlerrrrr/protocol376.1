@@ -1,0 +1,55 @@
+<datas path="afn05h">
+    <data name="Control_BreakDisconnect" path="f1">
+        <remark>遥控跳闸</remark>
+        <field name="delayTime">
+            <remark>延时时间</remark>
+            <defaultValue>30</defaultValue>
+            <fieldType name="unsigned8"/>
+            <unit>second</unit>
+        </field>
+    </data>
+
+    <data name="Control_BreakConnect" path="f2">
+        <remark>遥控合闸</remark>
+        <field name="delayTime">
+            <remark>延时时间</remark>
+            <defaultValue>30</defaultValue>
+            <fieldType name="unsigned8"/>
+            <unit>second</unit>
+        </field>
+    </data>
+
+    <data name="Control_BreakTryDisconnect" path="f7">
+        <remark>远程试跳命令</remark>
+        <field name="delayTime1">
+            <remark>拉闸命令检测状态延时</remark>
+            <defaultValue>1</defaultValue>
+            <fieldType name="unsigned8"/>
+            <unit>second</unit>
+        </field>
+        <field name="delayTime2">
+            <remark>拉闸后再合闸延时</remark>
+            <defaultValue>1</defaultValue>
+            <fieldType name="unsigned8"/>
+            <unit>second</unit>
+        </field>
+        <field name="delayTime3">
+            <remark>合闸检测状态延时</remark>
+            <defaultValue>1</defaultValue>
+            <fieldType name="unsigned8"/>
+            <unit>second</unit>
+        </field>
+    </data>
+
+    <data name="allows_terminal_active_report" path="f29">
+        <remark>允许终端主动上报</remark>
+    </data>
+
+    <data name="Control_SynchronizeTime" path="f31">
+        <remark>对时时间</remark>
+        <refFieldGroup name="time">
+            <remark>秒、分、时、日、星期-月、年</remark>
+            <refType>a1</refType>
+        </refFieldGroup>
+    </data>
+</datas>

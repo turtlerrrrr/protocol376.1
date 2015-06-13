@@ -1,0 +1,328 @@
+<datas path="afn0ch">
+    <data name="terminalTime" path="f2">
+        <remark>终端日历时钟</remark>
+        <decode/>
+        <refFieldGroup name="time">
+            <remark>秒、分、时、日、星期-月、年</remark>
+            <refType>a1</refType>
+        </refFieldGroup>
+    </data>
+
+    <data name="protectorStatus" path="f26">
+        <remark>当前智能漏保分支电压、电流、剩余电流、状态字等</remark>
+        <refFieldGroup name="readTime">
+            <remark>终端抄表时间</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <refFieldGroup name="pDate">
+            <remark>漏保日期</remark>
+            <refType>a20</refType>
+        </refFieldGroup>
+        <refFieldGroup name="pTime">
+            <remark>漏保时间</remark>
+            <refType>a16</refType>
+        </refFieldGroup>
+        <field name="Ua">
+            <remark>当前A相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+        <field name="Ub">
+            <remark>当前B相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+        <field name="Uc">
+            <remark>当前C相电压</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>V</unit>
+        </field>
+        <field name="Ia">
+            <remark>当前A相电流</remark>
+            <fieldType name="bcdUnsigned">
+                <length>3</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+        <field name="Ib">
+            <remark>当前B相电流</remark>
+            <fieldType name="bcdUnsigned">
+                <length>3</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+        <field name="Ic">
+            <remark>当前C相电流</remark>
+            <fieldType name="bcdUnsigned">
+                <length>3</length>
+                <degree>0.1</degree>
+            </fieldType>
+            <unit>A</unit>
+        </field>
+        <field name="residualCurrent">
+            <remark>当前剩余电流</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+            <unit>mA</unit>
+        </field>
+        <field name="maxResidualCurrentPhase">
+            <remark>当前剩余电流最大相</remark>
+            <fieldType name="unsigned8"/>
+            <unit>mA</unit>
+        </field>
+        <field name="ratedCurrent">
+            <remark>当前额定剩余电流动作值</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+            <unit>mA</unit>
+        </field>
+        <field name="ratedUtmostKeepTime">
+            <remark>当前额定极限不驱动时间</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+            <unit>ms</unit>
+        </field>
+        <refFieldGroup name="statusParam1">
+            <remark>漏保运行状态字1</remark>
+            <refType>statusParam1</refType>
+        </refFieldGroup>
+        <refFieldGroup name="statusParam2">
+            <remark>漏保运行状态字2</remark>
+            <refType>statusParam2</refType>
+        </refFieldGroup>
+        <field name="failurePhase">
+            <remark>故障相位</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="failureParam">
+            <remark>故障参数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>3</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <refFieldGroup name="controlParam1">
+            <remark>漏保整定参数之设备控制字1</remark>
+            <refType>controlParam1</refType>
+        </refFieldGroup>
+        <refFieldGroup name="controlParam2">
+            <remark>漏保整定参数之设备控制字2</remark>
+            <refType>controlParam2</refType>
+        </refFieldGroup>
+        <refFieldGroup name="controlParam3">
+            <remark>漏保整定参数之设备控制字3</remark>
+            <refType>controlParam3</refType>
+        </refFieldGroup>
+        <refFieldGroup name="controlParam4">
+            <remark>漏保整定参数之设备控制字4</remark>
+            <refType>controlParam4</refType>
+        </refFieldGroup>
+        <refFieldGroup name="controlParam5">
+            <remark>漏保整定参数之设备控制字5</remark>
+            <refType>controlParam5</refType>
+        </refFieldGroup>
+    </data>
+
+    <data name="protectorStatistic" path="f27">
+        <refFieldGroup name="readTime">
+            <remark>终端抄表时间</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="dataClearTimes">
+            <remark>数据清零总次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>3</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="totalSwitchOffTimes">
+            <remark>总跳闸次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="lockSwitchOffTimes">
+            <remark>闭锁性跳闸次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="protectorSwitchOffTimes">
+            <remark>剩余电流保护跳闸次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="currentSwitchOffTimes">
+            <remark>电流保护跳闸次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="voltageSwitchOffTimes">
+            <remark>电压保护跳闸次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="manualSwitchOffTimes">
+            <remark>人工闭锁跳闸次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="zeroSwitchOffTimes">
+            <remark>缺零保护跳闸次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="testSwitchOffTimes">
+            <remark>试验跳闸次数（定时、远程、按键）</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="lostProtectTimes">
+            <remark>退出剩余电流保护次数</remark>
+            <fieldType name="bcdUnsigned">
+                <length>2</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="runningTime">
+            <remark>保护器运行时间总累计</remark>
+            <fieldType name="bcdUnsigned">
+                <length>4</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </data>
+
+    <data name="protectorParameter" path="f28">
+        <remark>当前智能漏保参数变量</remark>
+        <refFieldGroup name="readTime">
+            <remark>终端抄表时间</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="address">
+            <remark>通信地址</remark>
+            <fieldType name="bcdUnsigned">
+                <length>6</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="protectorAsset">
+            <remark>设备号</remark>
+            <fieldType name="bcdUnsigned">
+                <length>6</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="assetCode">
+            <remark>资产管理编码</remark>
+            <fieldType name="ascii">
+                <length>32</length>
+            </fieldType>
+        </field>
+        <field name="ratedVoltage">
+            <remark>额定电压</remark>
+            <fieldType name="ascii">
+                <length>6</length>
+            </fieldType>
+        </field>
+        <field name="ratedCurrent">
+            <remark>额定电流/基本电流</remark>
+            <fieldType name="ascii">
+                <length>6</length>
+            </fieldType>
+        </field>
+        <field name="maxCurrent">
+            <remark>最大（壳架）电流(Inm)</remark>
+            <fieldType name="ascii">
+                <length>6</length>
+            </fieldType>
+        </field>
+        <field name="deviceType">
+            <remark>设备型号</remark>
+            <fieldType name="ascii">
+                <length>32</length>
+            </fieldType>
+        </field>
+        <field name="protocalType">
+            <remark>协议版本号</remark>
+            <fieldType name="ascii">
+                <length>32</length>
+            </fieldType>
+        </field>
+        <field name="factoryCode">
+            <remark>厂家工厂代码</remark>
+            <fieldType name="ascii">
+                <length>24</length>
+            </fieldType>
+        </field>
+        <field name="firmware">
+            <remark>厂家固件版本号</remark>
+            <fieldType name="ascii">
+                <length>32</length>
+            </fieldType>
+        </field>
+        <field name="hardware">
+            <remark>厂家硬件版本号</remark>
+            <fieldType name="ascii">
+                <length>32</length>
+            </fieldType>
+        </field>
+        <field name="param1">
+            <remark>剩余电流动作值用户定制档位参数1</remark>
+            <fieldType name="bcdUnsigned">
+                <length>12</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="param2">
+            <remark>极限不驱动时间用户定制档位参数2</remark>
+            <fieldType name="bcdUnsigned">
+                <length>6</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="reSwitchOnTimeRange">
+            <remark>自动重合闸时间范围</remark>
+            <fieldType name="ascii">
+                <length>24</length>
+            </fieldType>
+        </field>
+        <field name="deviceFeatures">
+            <remark>剩余电流动作特性（A型或AC型）</remark>
+            <fieldType name="ascii">
+                <length>24</length>
+            </fieldType>
+        </field>
+    </data>
+</datas>

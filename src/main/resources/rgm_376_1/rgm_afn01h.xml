@@ -1,0 +1,14 @@
+<datas path="afn01h">
+    <data name="hardwareInitialization" path="f1">
+        <remark>硬件初始化</remark>
+    </data>
+    <data name="dataInitialization" path="f2">
+        <remark>数据区初始化</remark>
+    </data>
+    <data name="allDataInitialization" path="f3">
+        <remark>参数及全体数据区初始化（即恢复至出厂配置）</remark>
+    </data>
+    <data name="allDataInitializationExceptComm" path="f4">
+        <remark>参数（除与系统主站通信有关的）及全体数据区初始化</remark>
+    </data>
+</datas>

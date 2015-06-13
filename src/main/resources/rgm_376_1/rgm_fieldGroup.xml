@@ -1,0 +1,507 @@
+<fieldGroups>
+    <fieldGroup name="a1">
+        <remark>A.1数据格式01</remark>
+        <format>${year}/${month}/${day} ${hour}:${minute}:${second} ${week}</format>
+        <field name="second">
+            <remark>秒</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="minute">
+            <remark>分</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="hour">
+            <remark>时</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="day">
+            <remark>日</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="month">
+            <remark>月</remark>
+            <fieldType name="bcdUnsignedByBit">
+                <length>5</length>
+            </fieldType>
+        </field>
+        <field name="week">
+            <remark>星期</remark>
+            <fieldType name="bcdUnsignedByBit">
+                <length>3</length>
+            </fieldType>
+        </field>
+        <field name="year">
+            <remark>年</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="a15">
+        <remark>分时日月年</remark>
+        <format>${year}/${month}/${day} ${hour}:${minute}</format>
+        <field name="minute">
+            <remark>分</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="hour">
+            <remark>时</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="day">
+            <remark>日</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="month">
+            <remark>月</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="year">
+            <remark>年</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="a16">
+        <remark>秒分时日</remark>
+        <format>${day} ${hour}:${minute}:${second}</format>
+        <field name="second">
+            <remark>秒</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="minute">
+            <remark>分</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="hour">
+            <remark>时</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="day">
+            <remark>日</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="a18">
+        <remark>分时日</remark>
+        <format>${day} ${hour}:${minute}</format>
+        <field name="minute">
+            <remark>分</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="hour">
+            <remark>时</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="day">
+            <remark>日</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="a19">
+        <remark>分时</remark>
+        <format>${hour}:${minute}</format>
+        <field name="minute">
+            <remark>分</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="hour">
+            <remark>时</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="a20">
+        <remark>年月日</remark>
+        <format>${year}/${month}/${day}</format>
+        <field name="day">
+            <remark>日</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="month">
+            <remark>月</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="year">
+            <remark>年</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="a21">
+        <remark>年月</remark>
+        <format>${year}/${month}</format>
+        <field name="month">
+            <remark>月</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+        <field name="year">
+            <remark>年</remark>
+            <fieldType name="bcdUnsigned">
+                <length>1</length>
+                <degree>1</degree>
+            </fieldType>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="controlParam1">
+        <remark>漏保整定参数之设备控制字1</remark>
+        <field name="dummy1">
+            <remark>保留</remark>
+            <defaultValue>0</defaultValue>
+            <hidden/>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+        </field>
+        <field name="reSwitchOn">
+            <remark>重合闸</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="禁止"></entry>
+                <entry key="0" value="允许"></entry>
+            </description>
+        </field>
+        <field name="gearReturn">
+            <remark>档位返回</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="禁止"></entry>
+                <entry key="0" value="允许"></entry>
+            </description>
+        </field>
+        <field name="timingSwitch">
+            <remark>定时试跳</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="alertSound">
+            <remark>报警声音</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="alertLight">
+            <remark>报警灯光</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="dataAlert">
+            <remark>数据告警</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="dummy2">
+            <remark>保留</remark>
+            <defaultValue>0</defaultValue>
+            <hidden/>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="controlParam2">
+        <remark>漏保整定参数之设备控制字2</remark>
+        <field name="overCurrentSwitchControl">
+            <remark>过流保护跳闸控制</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="overCurrentDataAlert">
+            <remark>过流保护数据告警</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="phaseLossSwitchControl">
+            <remark>缺相保护跳闸控制</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="phaseLossDataAlert">
+            <remark>缺相保护数据告警</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="overVoltageSwitchControl">
+            <remark>过压保护跳闸控制</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="overVoltageDataAlert">
+            <remark>过压保护数据告警</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="underVoltageSwitchControl">
+            <remark>欠压保护跳闸控制</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="underVoltageDataAlert">
+            <remark>欠压保护数据告警</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="controlParam3">
+        <remark>漏保整定参数之设备控制字3</remark>
+        <field name="zeroLossSwitchControl">
+            <remark>缺零保护跳闸控制</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="zeroLossDataAlert">
+            <remark>缺零保护数据告警</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="允许"></entry>
+                <entry key="0" value="禁止"></entry>
+            </description>
+        </field>
+        <field name="dummy">
+            <remark>保留</remark>
+            <defaultValue>0</defaultValue>
+            <hidden/>
+            <fieldType name="unsigned8">
+                <length>5</length>
+            </fieldType>
+        </field>
+        <field name="testSource">
+            <remark>试跳源</remark>
+            <fieldType name="unsigned8">
+                <length>1</length>
+            </fieldType>
+            <description>
+                <entry key="1" value="外部"></entry>
+                <entry key="0" value="内部"></entry>
+            </description>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="controlParam4">
+        <remark>漏保整定参数之设备控制字4</remark>
+        <field name="residualCurrentAlertTime">
+            <remark>剩余电流报警时间</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+            <description>
+                <entry key="0" value="报警退出"></entry>
+                <entry key="1" value="报警24小时"></entry>
+                <entry key="2" value="长期报警"></entry>
+                <entry key="3" value="保留"></entry>
+            </description>
+        </field>
+        <field name="utmostNoDriveTime">
+            <remark>极限不驱动时间</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+            <description>
+                <entry key="0" value="档位1"></entry>
+                <entry key="1" value="档位2"></entry>
+                <entry key="2" value="档位3"></entry>
+                <entry key="3" value="无延时"></entry>
+            </description>
+        </field>
+        <field name="residualCurrentAction1">
+            <remark>剩余电流动作值I</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+            <description>
+                <entry key="0" value="档位1"></entry>
+                <entry key="1" value="档位2"></entry>
+                <entry key="2" value="档位3"></entry>
+                <entry key="3" value="无效"></entry>
+            </description>
+        </field>
+        <field name="residualCurrentAction2">
+            <remark>剩余电流动作值II</remark>
+            <fieldType name="unsigned8">
+                <length>2</length>
+            </fieldType>
+            <description>
+                <entry key="0" value="档位4"></entry>
+                <entry key="1" value="档位5"></entry>
+                <entry key="2" value="档位6"></entry>
+                <entry key="3" value="自动跟踪"></entry>
+            </description>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="controlParam5">
+        <remark>漏保整定参数之设备控制字5</remark>
+        <field name="dummy">
+            <remark>保留</remark>
+            <defaultValue>0</defaultValue>
+            <hidden/>
+            <fieldType name="unsigned8"/>
+        </field>
+    </fieldGroup>
+
+    <fieldGroup name="statusParam1">
+        <remark>漏保运行状态字1</remark>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+    </fieldGroup>
+    <fieldGroup name="statusParam2">
+        <remark>漏保运行状态字2</remark>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+    </fieldGroup>
+</fieldGroups>

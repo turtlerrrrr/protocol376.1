@@ -1,0 +1,678 @@
+<datas path="afn0dh">
+    <data name="measured_power_curve" path="f81">
+        <remark>测量点有功功率曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="activePowers">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="activePower">
+                <remark>有功功率</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>kW</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="a_phase_measured_power_curve" path="f82">
+        <remark>测量点A相有功功率曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="activePowers">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="activePower">
+                <remark>有功功率</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>kW</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="b_phase_measured_power_curve" path="f83">
+        <remark>测量点B相有功功率曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="activePowers">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="activePower">
+                <remark>有功功率</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>kW</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="c_phase_measured_power_curve" path="f84">
+        <remark>测量点C相有功功率曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="activePowers">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="activePower">
+                <remark>有功功率</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>kW</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="measurement_of_reactive_power_curve" path="f85">
+        <remark>测量点无功功率曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="reactivePowers">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="reactivePower">
+                <remark>无功功率</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>kvar</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="a_phase_measurement_of_reactive_power_curve" path="f86">
+        <remark>A相测量点无功功率曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="reactivePowers">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="reactivePower">
+                <remark>无功功率</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>kvar</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="b_phase_measurement_of_reactive_power_curve" path="f87">
+        <remark>B相测量点无功功率曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="reactivePowers">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="reactivePower">
+                <remark>无功功率</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>kvar</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="c_phase_measurement_of_reactive_power_curve" path="f88">
+        <remark>C相测量点无功功率曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="reactivePowers">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="reactivePower">
+                <remark>无功功率</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>kvar</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="a_phase_measurement_of_voltage_curve" path="f89">
+        <remark>测量点A相电压曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="voltages">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="voltage">
+                <remark>电压</remark>
+                <fieldType name="bcdUnsigned">
+                    <length>2</length>
+                    <degree>0.1</degree>
+                </fieldType>
+                <unit>V</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="b_phase_measurement_of_voltage_curve" path="f90">
+        <remark>测量点B相电压曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="voltages">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="voltage">
+                <remark>电压</remark>
+                <fieldType name="bcdUnsigned">
+                    <length>2</length>
+                    <degree>0.1</degree>
+                </fieldType>
+                <unit>V</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="c_phase_measurement_of_voltage_curve" path="f91">
+        <remark>测量点C相电压曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="voltages">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="voltage">
+                <remark>电压</remark>
+                <fieldType name="bcdUnsigned">
+                    <length>2</length>
+                    <degree>0.1</degree>
+                </fieldType>
+                <unit>V</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="a_phase_measurement_of_current_curve" path="f92">
+        <remark>测量点A相电流曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="currents">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="current">
+                <remark>电流</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>A</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="b_phase_measurement_of_current_curve" path="f93">
+        <remark>测量点B相电流曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="currents">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="current">
+                <remark>电流</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>A</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="c_phase_measurement_of_current_curve" path="f94">
+        <remark>测量点C相电流曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="currents">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="current">
+                <remark>电流</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>A</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="zero_phase_measurement_of_current_curve" path="f95">
+        <remark>测量点零相电流曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="currents">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="current">
+                <remark>电流</remark>
+                <fieldType name="bcdSigned">
+                    <length>3</length>
+                    <degree>0.001</degree>
+                </fieldType>
+                <unit>A</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="leakage_protection_of_residual_current_curve" path="f96">
+        <remark>漏保剩余电流曲线（扩展）</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="residualCurrents">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="residualCurrent">
+                <remark>剩余电流值</remark>
+                <fieldType name="bcdUnsigned">
+                    <length>2</length>
+                    <degree>1</degree>
+                 </fieldType>
+                <unit>mA</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="measurement_of_power_factor_curve" path="f105">
+        <remark>测量点功率因数曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="powerFactors">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="powerFactor">
+                <remark>功率因数</remark>
+                <fieldType name="bcdSigned">
+                    <length>2</length>
+                    <degree>0.1</degree>
+                </fieldType>
+                <unit>%</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="a_phase_measurement_of_power_factor_curve" path="f106">
+        <remark>A相测量点功率因数曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="powerFactors">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="powerFactor">
+                <remark>功率因数</remark>
+                <fieldType name="bcdSigned">
+                    <length>2</length>
+                    <degree>0.1</degree>
+                </fieldType>
+                <unit>%</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="b_phase_measurement_of_power_factor_curve" path="f107">
+        <remark>B相测量点功率因数曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="powerFactors">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="powerFactor">
+                <remark>功率因数</remark>
+                <fieldType name="bcdSigned">
+                    <length>2</length>
+                    <degree>0.1</degree>
+                </fieldType>
+                <unit>%</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="c_phase_measurement_of_power_factor_curve" path="f108">
+        <remark>C相测量点功率因数曲线</remark>
+        <refFieldGroup name="ts">
+            <remark>起始时间ts：分时日月年</remark>
+            <refType>a15</refType>
+        </refFieldGroup>
+        <field name="frozenDensity">
+            <remark>数据冻结密度m</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pointNumber">
+            <remark>数据点数n</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <list name="powerFactors">
+            <refNum>#data['pointNumber']</refNum>
+            <decode/>
+            <field name="powerFactor">
+                <remark>功率因数</remark>
+                <fieldType name="bcdSigned">
+                    <length>2</length>
+                    <degree>0.1</degree>
+                </fieldType>
+                <unit>%</unit>
+            </field>
+        </list>
+    </data>
+
+    <data name="day_freeze_on_current_unbalanced_degree_limit_cumulative_time" path="f230">
+        <remark>日冻结电流不平衡度越限累计时间</remark>
+        <refFieldGroup name="ts">
+            <remark>日月年</remark>
+            <refType>a20</refType>
+        </refFieldGroup>
+        <field name="value1">
+            <remark>电流不平衡度越限大于50%累计时间</remark>
+            <fieldType name="unsigned16"/>
+            <decode/>
+            <unit>min</unit>
+        </field>
+        <field name="value2">
+            <remark>电流不平衡度越限大于20%累计时间</remark>
+            <fieldType name="unsigned16"/>
+            <decode/>
+            <unit>min</unit>
+        </field>
+        <field name="value3">
+            <remark>电流不平衡度越限小于20%累计时间</remark>
+            <fieldType name="unsigned16"/>
+            <decode/>
+            <unit>min</unit>
+        </field>
+    </data>
+
+    <data name="month_freeze_on_current_unbalanced_degree_limit_cumulative_time" path="f240">
+        <remark>日冻结电流不平衡度越限累计时间</remark>
+        <refFieldGroup name="ts">
+            <remark>月年</remark>
+            <refType>a21</refType>
+        </refFieldGroup>
+        <field name="value1">
+            <remark>电流不平衡度越限大于50%累计时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+        <field name="value2">
+            <remark>电流不平衡度越限大于20%累计时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+        <field name="value3">
+            <remark>电流不平衡度越限小于20%累计时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+    </data>
+
+    <data name="day_freeze_on_the_point_of_measurement_of_residual_current_statistics" path="f231">
+        <remark>日冻结测量点剩余电流统计</remark>
+        <refFieldGroup name="ts">
+            <remark>日月年</remark>
+            <refType>a20</refType>
+        </refFieldGroup>
+        <field name="number">
+            <remark>剩余电流阀值数量:N</remark>
+            <decode/>
+            <fieldType name="unsigned8"/>
+            <unit>个</unit>
+        </field>
+        <field name="value1">
+            <remark>剩余电流大于第一阀值时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+        <field name="value2">
+            <remark>剩余电流大于第二阀值时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+        <field name="value3">
+            <remark>剩余电流大于第三阀值的时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+    </data>
+
+    <data name="month_freeze_on_the_point_of_measurement_of_residual_current_statistics" path="f241">
+        <remark>日冻结测量点剩余电流统计</remark>
+        <refFieldGroup name="ts">
+            <remark>日月年</remark>
+            <refType>a21</refType>
+        </refFieldGroup>
+        <field name="number">
+            <remark>剩余电流阀值数量:N</remark>
+            <decode/>
+            <fieldType name="unsigned8"/>
+            <unit>个</unit>
+        </field>
+        <field name="value1">
+            <remark>剩余电流大于第一阀值时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+        <field name="value2">
+            <remark>剩余电流大于第二阀值时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+        <field name="value3">
+            <remark>剩余电流大于第三阀值的时间</remark>
+            <decode/>
+            <fieldType name="unsigned16"/>
+            <unit>min</unit>
+        </field>
+    </data>
+
+</datas>

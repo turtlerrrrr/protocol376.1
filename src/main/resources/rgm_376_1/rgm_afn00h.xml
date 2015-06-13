@@ -1,0 +1,27 @@
+<datas path="afn00h">
+    <data name="Confirm" path="f1">
+        <remark>全部确认</remark>
+    </data>
+    <data name="Deny" path="f2">
+        <remark>全部否认</remark>
+    </data>
+    <data name="some_deny" path="f3">
+        <remark>部分否认</remark>
+        <field name="targetAfn">
+            <remark>要被确认的报文的AFN</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pn">
+            <remark>信息点pn</remark>
+            <fieldType name="da"/>
+        </field>
+        <field name="fn">
+            <remark>信息类fn</remark>
+            <fieldType name="dt"/>
+        </field>
+        <field name="errorCode">
+            <remark>错误码</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+    </data>
+</datas>

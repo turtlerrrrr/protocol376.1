@@ -1,0 +1,25 @@
+<datas path="afn0eh">
+    <data name="importantEvent" path="f1">
+        <remark>请求重要事件</remark>
+        <field name="pm">
+            <remark>请求事件记录起始指针</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pn">
+            <remark>请求事件记录结束指针</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+    </data>
+
+    <data name="normalEvent" path="f2">
+        <remark>请求一般事件</remark>
+        <field name="pm">
+            <remark>请求事件记录起始指针</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+        <field name="pn">
+            <remark>请求事件记录结束指针</remark>
+            <fieldType name="unsigned8"/>
+        </field>
+    </data>
+</datas>
